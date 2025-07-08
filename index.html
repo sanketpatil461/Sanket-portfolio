@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sanket Pise Portfolio | Sanket Pise portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary-color: #0f62fe;
+      --bg-color: #f4f4f4;
+      --text-color: #333;
+      --footer-bg: #ddd;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      text-align: center;
+    }
+
+    header {
+      background: var(--primary-color);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: box-shadow 0.3s ease;
+    }
+
+    header.scrolled {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: var(--footer-bg);
+    }
+
+    .btn {
+      padding: 0.7rem 1.2rem;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #0047ab;
+      transform: scale(1.05);
+    }
+
+    input, textarea {
+      width: 80%;
+      max-width: 400px;
+      padding: 0.6rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    iframe {
+      border: 1px solid #ccc;
+      margin-top: 1rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 0.5rem 0;
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Section animation */
+    section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 600px) {
+      main, footer {
+        padding: 1rem;
+      }
+      iframe {
+        width: 100%;
+      }
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background: #121212;
+      color: #f4f4f4;
+    }
+    header.dark-mode {
+      background: #1f1f1f;
+    }
+    footer.dark-mode {
+      background: #222;
+    }
+    input.dark-mode, textarea.dark-mode {
+      background: #333;
+      color: white;
+      border: 1px solid #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sanket Portfolio</h1>
+    <p>Welcome to my personal portfolio website</p>
+  </header>
+
+  <main>
+    <button class="btn" onclick="DarkMode()">Dark Mode</button>
+
+    <section>
+      <h2>About Me</h2>
+      <p>I am a dedicated Cloud DevOps Engineer with skills in building and managing cloud systems that are secure, scalable, and efficient. I specialize in cloud AWS along with Devops tools like Docker, Kubernetes, Terraform, Jenkins, Prometheus & Grafana.</p>
+      <p>My focus is on automating workflows, improving system reliability, and delivering cost-effective solutions tailored to business needs.</p> 
+      <p>Let's simplify and optimize your cloud and DevOps processes.</p>
+    </section>
+      
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Operating Systems:</strong> Linux</li>
+        <li><strong>Cloud Platforms:</strong> AWS</li>
+        <li><strong>Containerization & Orchestration:</strong> Docker, Kubernetes</li>
+        <li><strong>Infrastructure as Code:</strong> Terraform, Ansible</li>
+        <li><strong>CI/CD & Version control Tools:</strong> Jenkins, Git</li>
+        <li><strong>Scripting Languages:</strong> Python, Bash</li>
+        <li><strong>Project Management:</strong> JIRA</li>
+      </ul>
+    </section>
+    <section>
+  <h2>Projects</h2>
+  <ul>
+    <li>
+      <strong>AWS Infrastructure Automation</strong><br>
+      Automated multi-tier architecture setup using Terraform and Ansible on AWS. <br>
+      <a class="btn" href="https://github.com/yourusername/aws-infra-project" target="_blank">View on GitHub</a>
+    </li>
+    <li>
+      <strong>CI/CD Pipeline with Jenkins & Docker</strong><br>
+      Built a complete CI/CD pipeline using Git, Jenkins, Docker, and Kubernetes.<br>
+      <a class="btn" href="https://github.com/yourusername/devops-pipeline" target="_blank">View on GitHub</a>
+    </li>
+    <li>
+      <strong>Monitoring Stack with Prometheus & Grafana</strong><br>
+      Deployed monitoring stack with custom dashboards and alert rules.<br>
+      <a class="btn" href="https://github.com/yourusername/monitoring-stack" target="_blank">View on GitHub</a>
+    </li>
+  </ul>
+</section>
+
+
+    <section>
+      <h2>Resume</h2>
+      <iframe src="https://mazibuc1.s3.ap-south-1.amazonaws.com/Sanketpise+_cv.pdf" width="80%" height="500px"></iframe>
+    </section>
+
+    <section>
+      <h2>Connect with Me</h2>
+      <p>
+        <a class="btn" href="https://github.com/sanketpatil461" target="_blank">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/sanket-pise-86459318a" target="_blank">LinkedIn</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Sanket Portfolio. All rights reserved.
+  </footer>
+
+  <script>
+    function DarkMode() {
+      document.body.classList.toggle("dark-mode");
+      document.querySelector("header").classList.toggle("dark-mode");
+      document.querySelector("footer").classList.toggle("dark-mode");
+
+      const inputs = document.querySelectorAll("input, textarea");
+      inputs.forEach(input => input.classList.toggle("dark-mode"));
+    }
+
+    // Animate sections on scroll
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Add shadow to header on scroll
+    window.addEventListener("scroll", () => {
+      const header = document.querySelector("header");
+      header.classList.toggle("scrolled", window.scrollY > 10);
+    });
+  </script>
+</body>
+</html>
